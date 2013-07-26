@@ -1,25 +1,15 @@
-%h1 Listing articles
+%h1 Articles
 
-%table
-  %tr
-    %th Name
-    %th Author
-    %th Published at
-    %th Content
-    %th
-    %th
-    %th
+= form_tag search_path, :method => "get" do
+  = text_field_tag "query"
+  = button_tag "Search", :type => "submit", :name => nil
 
+%ul
   - @articles.each do |article|
-    %tr
-      %td= article.name
-      %td= article.author
-      %td= article.published_at
-      %td= article.content
-      %td= link_to 'Show', article
-      %td= link_to 'Edit', edit_article_path(article)
-      %td= link_to 'Destroy', article, method: :delete, data: { confirm: 'Are you sure?' }
+    %li
+      = link_to article.name, article
+      = "by #{article.author.name}"
 
-%br
+%hr
 
 = link_to 'New Article', new_article_path

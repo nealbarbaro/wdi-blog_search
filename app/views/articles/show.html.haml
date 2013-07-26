@@ -1,18 +1,17 @@
-%p#notice= notice
+%h1= @article.name
+%h2= "by #{@article.author.name}"
 
-%p
-  %b Name:
-  = @article.name
-%p
-  %b Author:
-  = @article.author
-%p
-  %b Published at:
-  = @article.published_at
-%p
-  %b Content:
-  = @article.content
+%p= @article.content
 
-= link_to 'Edit', edit_article_path(@article)
-\|
-= link_to 'Back', articles_path
+%hr
+
+#comments
+  %h3 Comments
+
+  - @article.comments.each do |comment|
+    %p.comment
+      = "#{comment.name} says: #{comment.content}"
+
+%hr
+
+= link_to 'Home', root_path

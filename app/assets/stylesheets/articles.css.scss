@@ -1,3 +1,10 @@
-// Place all the styles related to the Articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+#comments{
+  background: #ddd;
+  padding: 15px;
+  margin: 15px;
+
+  .comment{
+    border-top: 1px solid #bbb;
+    padding-top: 10px;
+  }
+}
