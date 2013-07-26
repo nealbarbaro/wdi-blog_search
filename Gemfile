@@ -46,8 +46,8 @@ gem 'unicorn'
 
 gem 'quiet_assets'
 
-# gem 'sunspot_rails'
+gem 'sunspot_rails'
 
-# group :development do
-#   gem 'sunspot_solr'
-# end
+group :development do
+  gem 'sunspot_solr'
+end
